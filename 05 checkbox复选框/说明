@@ -1,0 +1,10 @@
+一般用于 是/否的使用
+属性：可查阅QT文档
+操作函数：可查阅QT文档
+常用函数：bool isChecked() const
+void setChecked(bool)
+有哪些信号（即支持哪些事件）
+void stateChanged(int state)
+属性：
+QPushButton.setEnable(true/false);  按钮是否可被点击
+QCheckBox..isChecked();  复选框是否为选中状态
