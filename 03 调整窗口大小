@@ -1,0 +1,16 @@
+Size Policy:用于描述一个Widget被resize（调整大小的时候），采用的策略
+
+在QSizePolicy类中定义了七种策略：
+Fixed：使用sizeHint，Widget不能更大也不能更小，推荐大小
+Preferred:优先使sizeHint，可大可小
+Expanding ：使用sizeHint，越大越好
+Minimun：不得小于sizeHin，可以更大但不需要更大
+Maximum：不得大于sizeHin，可以更小
+MinimumExpanding：不得小于sizeHint，越大越好
+lgnored：忽略sizeHint，越大越好
+
+virtual Qsize sizeHint() const
+每一个Widget窗口类都需要重写这个函数
+作用：向布局器声明自己所需的空间大小，推荐尺寸
+
+sizeHint和QSizePolicy都是提供给布局器信息，布局器QLayout会根据这两个信息来决定这个窗口空间的实际尺寸
