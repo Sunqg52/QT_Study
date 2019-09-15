@@ -1,0 +1,29 @@
+数据项：
+下拉列表里的数据项至少有一下属性：
+1.位置index，第一项的index值为0
+2.文本index这一项的显示值
+3.关联数据data，每一项可以关联一个数据，比如整数文本等类型的数据
+
+手工添加项：
+1.addltem：新数据项附加在末尾
+2.insertltem：在指定的位置添加数据项
+ui.cmboxLang->addltem("Chinese");
+ui.cmboxLang->addltem("English");
+ui.cmboxLang->addltem("French");
+ui.cmboxLang->insertltem(2, "Korean");
+
+设置关联数据：
+在使用QComboBox时，text时显示给用户看的，而程序内部往往使用的是其关联数
+据
+itemData()：取得关联数据
+setItemData()：设置关联数据
+例如，在语言设置里
+“中文” -> "ch"
+"英文" -> "en"
+“法文” -> "fr"
+
+事件处理signal：
+void currentIndexChanged(int index)    当选中时 发生的改变
+
+可编辑的editabel
+如果一个QComboBox是可以编辑的，则意味着用户既可以选择一项，也可以直接输入一项
