@@ -1,0 +1,28 @@
+signal & slot
+对象a中有一个信号signal:XXX(代表一个事件)
+对象b中有一个槽slot:YYY（事件处理函数）
+事先把它们连接起来
+connetc(a, XXX, b, XXX);
+当a中的事件发生时，b中的处理函数就会被调用
+实例：
+当点击按钮时，文本框中会弹出，hello word
+ 第一步：查询文档，找到QPushbutton的信号机制
+在其父类找到一个signal：void clicked(bool checked = false)
+
+第二步：定义处理函数，参数类型应该和signal的参数相同,定义槽机制
+//头文件
+private slots:
+int OnShowClicked(bool checked);
+//cpp文件
+int QT3_3B::OnShowClicked(bool checked)
+{
+return 0;
+} 
+
+第三步：将信号与槽进行关联，将a对象的signal，与b对象的slot给链接起来
+connect（
+ui.btnShow,					//对象a必须是一个QObject*类型
+SIGNAL(clicked(bool)),			//a的信号
+this,							//对象b
+SLOT(OnShowClicked(bool))		//b的槽
+）;
