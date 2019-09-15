@@ -1,0 +1,18 @@
+Qt提供了两种按钮控件：
+QPushButton  --普通按钮
+QToolButton   --工具按钮
+有共同的父类   QAbstractButton
+
+QToolButton工具按钮：
+1.text文本显示
+2.icon图标
+
+基本知识：
+1.图标最好的是png格式因为背景透明
+2.图标资源有*.qrc文件定义，最终会被编入可执行程序
+
+autoRaise：浮动属性
+checkable：按下/弹起工作模式
+
+signal：
+void toggled(bool checked)
