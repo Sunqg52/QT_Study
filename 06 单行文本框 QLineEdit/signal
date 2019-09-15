@@ -1,7 +1,0 @@
-void cursorPositionChanged(int oldPos, int newPos)
-void editingFinished()        //当失去焦点
-void inputRejected()          //当回车键被按下
-void returnPressed()
-void selectionChanged()
-void textChanged(const QString &text)      //当文本有变化
-void textEdited(const QString &text)
