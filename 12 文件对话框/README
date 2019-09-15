@@ -1,0 +1,9 @@
+选择文件或提示文件的保存位置
+
+QFileDialog类：
+1.打开文件
+QString QFileDialog::getOpenFileName
+
+2.保存文件
+QString QFileDialog::getSaveFileName
+这是两个static函数 返回值为被选择的文件名
