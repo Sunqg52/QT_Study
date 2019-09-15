@@ -1,0 +1,64 @@
+main.cpp
+#include "QT_file_new.h"
+#include <QtWidgets/QApplication>
+
+int main(int argc, char *argv[])
+{
+	QApplication a(argc, argv);
+	QT_file_new w;
+	w.setGeometry(400,400,500,500);
+	w.show();
+
+	return a.exec();
+}
+
+QT_file_new.h
+#pragma once
+
+#include <QtWidgets/QMainWindow>		//基础父类窗口
+#include<QPushButton>					//按钮类
+#include<QLineEdit>						//单行文本框
+#include<QplainTextEdit>				//多行文本框
+#include "ui_QT_file_new.h"
+
+class QT_file_new : public QMainWindow
+{
+	Q_OBJECT
+
+public:
+	QT_file_new(QWidget *parent = Q_NULLPTR);
+
+private:
+	Ui::QT_file_newClass ui;
+	QPushButton* m_button;
+	QLineEdit* m_lineEdit;
+	QPlainTextEdit* m_textedit;
+};
+
+QT_file_new.cpp
+#include "QT_file_new.h"
+
+//窗口控件由其父类管理，自动有Qmainwindow释放
+QT_file_new::QT_file_new(QWidget *parent)
+	: QMainWindow(parent)
+{
+	ui.setupUi(this);
+
+	//单行文本框
+	m_lineEdit = new QLineEdit(this);
+	//m_lineEdit->setText("文本框");
+	m_lineEdit->setGeometry(0, 0, 300, 50);
+	
+	//按钮
+	m_button = new QPushButton(this);	//添加子控件时必须指定其parent窗口
+	m_button->setText("hello qt");
+	m_button->setGeometry(300, 0,100, 50);
+
+	//多行文本框
+	m_textedit = new QPlainTextEdit(this);
+	//m_textedit->setPlainText("多行文本框");
+	m_textedit->setGeometry(0,50,500,450);
+
+}
+
+
